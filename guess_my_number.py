@@ -9,7 +9,7 @@ import random
 
 print("\tWelcome to 'Guess My Number'!")
 print("\nI'm thinking of a number between 1 and 100.")
-print("Try to guess it in as few attempts as possible.\n")
+print("Try to guess it in under 10 tries!")
 
 # set the initial values
 the_number = random.randint(1, 100)
@@ -25,7 +25,10 @@ while guess != the_number:
             
     guess = int(input("Take a guess: "))
     tries += 1
-
+	if tries > 10:
+		print("Sorry, you lost. Try again.")
+		input("\n\nPress the enter key to exit.")
+	
 print("You guessed it!  The number was", the_number)
 print("And it only took you", tries, "tries!\n")
   
